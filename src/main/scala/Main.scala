@@ -3,14 +3,23 @@ import java.util.Scanner;
 object Main {
 
   def main(args: Array[String]): Unit = {
-    val scan:Scanner = new Scanner(System.in)
+    val scan: Scanner = new Scanner(System.in)
 
-    val sampleA = scan.nextLine()
-    val sampleBC = scan.nextLine()
-    val sampleS: String = scan.next()
+    val wordA = scan.next()
+    val wordB = scan.next()
+    val wordC: String = scan.next()
 
-    val sampleBCSplit= sampleBC.split(" ").map(_.toInt).toList.sum
-    val sampleSum = sampleA.toInt + sampleBCSplit
-    println(sampleSum + " " + sampleS)
+
+    val lastWordWordA = wordA.charAt(wordA.length() - 1)
+    val firstWordWordB = wordB.charAt(0)
+
+    val lastWordWordB = wordB.charAt(wordB.length() - 1)
+    val firstWordWordC = wordC.charAt(0)
+
+    if (lastWordWordA == firstWordWordB && lastWordWordB == firstWordWordC) {
+      println("YES")
+    } else {
+      println("NO")
+    }
   }
 }
